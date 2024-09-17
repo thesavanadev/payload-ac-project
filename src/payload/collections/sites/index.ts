@@ -1,3 +1,6 @@
+import { isAdmin } from "@/payload-access/isAdmin";
+import { isAdminOrHasSiteAccess } from "@/payload-access/isAdminOrHasSiteAccess";
+
 import type { CollectionConfig } from "payload";
 
 const Sites: CollectionConfig = {
@@ -10,7 +13,16 @@ const Sites: CollectionConfig = {
 		defaultColumns: ["title", "createdAt"],
 		useAsTitle: "title",
 	},
-	access: {},
+	access: {
+		// only admins can create
+		create: isAdmin,
+		// only admins or editors with site access can read
+		read: isAdminOrHasSiteAccess("id"),
+		// only admins can update
+		update: isAdmin,
+		// only admins can delete
+		delete: isAdmin,
+	},
 	fields: [
 		{
 			name: "title",
