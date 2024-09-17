@@ -14,6 +14,7 @@ import path from "path";
 import sharp from "sharp";
 import { fileURLToPath } from "url";
 
+import ContactRequest from "@/payload-collections/contact-request";
 import Media from "@/payload-collections/media";
 import Pages from "@/payload-collections/pages";
 import Sites from "@/payload-collections/sites";
@@ -72,7 +73,7 @@ export default buildConfig({
 		},
 		user: Users.slug,
 	},
-	collections: [Sites, Pages, Media, Users],
+	collections: [Sites, Pages, Media, ContactRequest, Users],
 	db: mongooseAdapter({ url: databaseURI }),
 	editor: lexicalEditor({
 		features: () => {
