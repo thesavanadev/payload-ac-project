@@ -1,6 +1,3 @@
-import { anyone } from "@/payload-access/anyone";
-import { authenticated } from "@/payload-access/authenticated";
-
 import type { CollectionConfig } from "payload";
 
 const Media: CollectionConfig = {
@@ -12,12 +9,7 @@ const Media: CollectionConfig = {
 	admin: {
 		defaultColumns: ["filename", "alt", "mimeType"],
 	},
-	access: {
-		create: authenticated,
-		delete: authenticated,
-		read: anyone,
-		update: authenticated,
-	},
+	access: {},
 	fields: [
 		{
 			name: "alt",

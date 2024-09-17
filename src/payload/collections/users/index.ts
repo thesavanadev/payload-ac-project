@@ -7,7 +7,7 @@ const Users: CollectionConfig = {
 		plural: "Users",
 	},
 	admin: {
-		defaultColumns: ["email", "createdAt"],
+		defaultColumns: ["firstName", "lastName", "email", "roles"],
 		useAsTitle: "email",
 	},
 	access: {},

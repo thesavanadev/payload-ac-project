@@ -16,7 +16,7 @@ const Pages: CollectionConfig = {
 		plural: "Pages",
 	},
 	admin: {
-		defaultColumns: ["title", "createdAt"],
+		defaultColumns: ["title", "site", "createdAt"],
 		useAsTitle: "title",
 	},
 	access: {},
