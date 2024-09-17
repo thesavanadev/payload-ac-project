@@ -7,6 +7,11 @@ import {
 	lexicalHTML,
 } from "@payloadcms/richtext-lexical";
 
+import { isAdmin } from "@/payload-access/isAdmin";
+import { isAdminOrHasSiteAccessOrPublished } from "@/payload-access/isAdminOrHasSiteAccessOrPublished";
+import { isAdminOrHasSiteAccess } from "@/payload-access/isAdminOrHasSiteAccess";
+import { isSignedIn } from "@/payload-access/isSignedIn";
+
 import type { CollectionConfig } from "payload";
 
 const Pages: CollectionConfig = {
@@ -19,7 +24,17 @@ const Pages: CollectionConfig = {
 		defaultColumns: ["title", "site", "createdAt"],
 		useAsTitle: "title",
 	},
-	access: {},
+	access: {
+		// anyone signed in can create
+		create: isSignedIn,
+		// only admins or editors with site access can update
+		update: isAdminOrHasSiteAccess(),
+		// admins or editors with site access can read,
+		// otherwise users not logged in can only read published
+		read: isAdminOrHasSiteAccessOrPublished,
+		// only admins can delete
+		delete: isAdmin,
+	},
 	fields: [
 		{
 			name: "title",
