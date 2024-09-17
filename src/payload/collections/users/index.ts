@@ -1,3 +1,6 @@
+import { isAdmin, isAdminFieldLevel } from "@/payload-access/isAdmin";
+import { isAdminOrSelf } from "@/payload-access/isAdminOrSelf";
+
 import type { CollectionConfig } from "payload";
 
 const Users: CollectionConfig = {
@@ -10,7 +13,16 @@ const Users: CollectionConfig = {
 		defaultColumns: ["firstName", "lastName", "email", "roles"],
 		useAsTitle: "email",
 	},
-	access: {},
+	access: {
+		// only admins can create users
+		create: isAdmin,
+		// admins can read all, but any other signed in user can only read their own data
+		read: isAdminOrSelf,
+		// admins can update all, but any other signed in user can only update their own data
+		update: isAdminOrSelf,
+		// Only admins can delete
+		delete: isAdmin,
+	},
 	auth: true,
 	fields: [
 		{
@@ -46,6 +58,8 @@ const Users: CollectionConfig = {
 			defaultValue: ["editor"],
 			access: {
 				// only admins can create or update a value for this field
+				create: isAdminFieldLevel,
+				update: isAdminFieldLevel,
 			},
 			options: [
 				{
