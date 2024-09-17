@@ -15,6 +15,7 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 import Media from "@/payload-collections/media";
+import Pages from "@/payload-collections/pages";
 import Sites from "@/payload-collections/sites";
 import Users from "@/payload-collections/users";
 
@@ -71,7 +72,7 @@ export default buildConfig({
 		},
 		user: Users.slug,
 	},
-	collections: [Sites, Media, Users],
+	collections: [Sites, Pages, Media, Users],
 	db: mongooseAdapter({ url: databaseURI }),
 	editor: lexicalEditor({
 		features: () => {

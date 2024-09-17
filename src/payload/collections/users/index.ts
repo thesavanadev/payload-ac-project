@@ -1,5 +1,3 @@
-import { authenticated } from "@/payload-access/authenticated";
-
 import type { CollectionConfig } from "payload";
 
 const Users: CollectionConfig = {
