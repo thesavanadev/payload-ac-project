@@ -11,6 +11,7 @@ export interface Config {
     users: UserAuthOperations;
   };
   collections: {
+    sites: Site;
     media: Media;
     users: User;
     'payload-preferences': PayloadPreference;
@@ -45,6 +46,16 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sites".
+ */
+export interface Site {
+  id: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
@@ -69,7 +80,10 @@ export interface Media {
  */
 export interface User {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
+  roles?: ('admin' | 'editor')[] | null;
+  sites?: (string | Site)[] | null;
   updatedAt: string;
   createdAt: string;
   email: string;

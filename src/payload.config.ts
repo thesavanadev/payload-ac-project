@@ -15,6 +15,7 @@ import sharp from "sharp";
 import { fileURLToPath } from "url";
 
 import Media from "@/payload-collections/media";
+import Sites from "@/payload-collections/sites";
 import Users from "@/payload-collections/users";
 
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
@@ -70,7 +71,7 @@ export default buildConfig({
 		},
 		user: Users.slug,
 	},
-	collections: [Media, Users],
+	collections: [Sites, Media, Users],
 	db: mongooseAdapter({ url: databaseURI }),
 	editor: lexicalEditor({
 		features: () => {
