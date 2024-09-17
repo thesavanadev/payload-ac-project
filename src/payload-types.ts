@@ -90,6 +90,7 @@ export interface Page {
 export interface Media {
   id: string;
   alt: string;
+  site: string | Site;
   _key?: string | null;
   updatedAt: string;
   createdAt: string;
