@@ -1,7 +1,7 @@
 {
-	"name": "payload-starter-template",
+	"name": "payload-access-control",
 	"version": "1.0.0",
-	"description": "A blank template to get started with Payload 3.0",
+	"description": "An exploration of the powerful access control measures built into Payload.",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
