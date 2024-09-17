@@ -1,12 +1,3 @@
-import {
-	FixedToolbarFeature,
-	HeadingFeature,
-	HTMLConverterFeature,
-	InlineToolbarFeature,
-	lexicalEditor,
-	lexicalHTML,
-} from "@payloadcms/richtext-lexical";
-
 import { anyone } from "@/payload/access/anyone";
 import { isAdmin } from "@/payload-access/isAdmin";
 import { noone } from "@/payload-access/noone";
@@ -37,21 +28,7 @@ const ContactRequest: CollectionConfig = {
 			name: "message",
 			label: "Message",
 			type: "richText",
-			editor: lexicalEditor({
-				features: ({ rootFeatures }) => {
-					return [
-						...rootFeatures,
-						FixedToolbarFeature(),
-						HeadingFeature({ enabledHeadingSizes: ["h2", "h3", "h4"] }),
-						/* the HTMLConverterFeature manages the HTML serializers */
-						HTMLConverterFeature({}),
-						InlineToolbarFeature(),
-					];
-				},
-			}),
 		},
-		/* converts the referenced lexical richText field into HTML */
-		lexicalHTML("message", { name: "message_html" }),
 	],
 };
 

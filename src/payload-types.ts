@@ -126,7 +126,6 @@ export interface ContactRequest {
     };
     [k: string]: unknown;
   } | null;
-  message_html?: string | null;
   updatedAt: string;
   createdAt: string;
 }

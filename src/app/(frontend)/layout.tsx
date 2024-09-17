@@ -4,9 +4,17 @@ import { cn } from "@/lib/utils";
 
 import ThemeProvider from "@/providers/theme";
 
+import type { Metadata } from "next";
+
 import "@/frontend/global.css";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
+
+export const metadata: Metadata = {
+	title: "Payload Access Control",
+	description:
+		"An exploration of the powerful access control measures built into Payload.",
+};
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
@@ -20,11 +28,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 					enableSystem
 					disableTransitionOnChange
 				>
-					<header>Header Goes Here</header>
+					<header></header>
 
 					<main>{children}</main>
 
-					<footer className="mt-auto">Footer Goes Here</footer>
+					<footer className="mt-auto"></footer>
 				</ThemeProvider>
 			</body>
 		</html>
