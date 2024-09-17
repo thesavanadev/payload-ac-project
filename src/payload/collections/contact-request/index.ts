@@ -14,7 +14,7 @@ import { noone } from "@/payload-access/noone";
 import type { CollectionConfig } from "payload";
 
 const ContactRequest: CollectionConfig = {
-	slug: "contactRequest",
+	slug: "contact-requests",
 	labels: {
 		singular: "Contact Request",
 		plural: "Contact Requests",
@@ -37,7 +37,6 @@ const ContactRequest: CollectionConfig = {
 			name: "message",
 			label: "Message",
 			type: "richText",
-			required: true,
 			editor: lexicalEditor({
 				features: ({ rootFeatures }) => {
 					return [

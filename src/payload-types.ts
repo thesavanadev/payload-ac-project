@@ -14,7 +14,7 @@ export interface Config {
     sites: Site;
     pages: Page;
     media: Media;
-    contactRequest: ContactRequest;
+    'contact-requests': ContactRequest;
     users: User;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -107,11 +107,11 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contactRequest".
+ * via the `definition` "contact-requests".
  */
 export interface ContactRequest {
   id: string;
-  message: {
+  message?: {
     root: {
       type: string;
       children: {
@@ -125,7 +125,7 @@ export interface ContactRequest {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   message_html?: string | null;
   updatedAt: string;
   createdAt: string;

@@ -23,7 +23,13 @@ const Users: CollectionConfig = {
 		// Only admins can delete
 		delete: isAdmin,
 	},
-	auth: true,
+	auth: {
+		// this property controls how deeply "populated"
+		// relationship docs are that are stored in the req.user.
+		// it should be kept to as low as possible, which
+		// keeps performance fast.
+		depth: 0,
+	},
 	fields: [
 		{
 			type: "row",
@@ -61,6 +67,9 @@ const Users: CollectionConfig = {
 				create: isAdminFieldLevel,
 				update: isAdminFieldLevel,
 			},
+			admin: {
+				description: "This field sets which roles that this user has access to.",
+			},
 			options: [
 				{
 					label: "Admin",
@@ -82,6 +91,8 @@ const Users: CollectionConfig = {
 			hasMany: true,
 			access: {
 				// only admins can create or update a value for this field
+				create: isAdminFieldLevel,
+				update: isAdminFieldLevel,
 			},
 			admin: {
 				condition: ({ roles }) => roles && !roles.includes("admin"),
