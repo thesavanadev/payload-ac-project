@@ -1,6 +1,6 @@
 {
 	"name": "payload-access-control",
-	"version": "1.0.0",
+	"version": "1.4.3",
 	"description": "An exploration of the powerful access control measures built into Payload.",
 	"license": "MIT",
 	"type": "module",
@@ -19,7 +19,6 @@
 		"@payloadcms/email-resend": "beta",
 		"@payloadcms/live-preview-react": "beta",
 		"@payloadcms/next": "beta",
-		"@payloadcms/plugin-cloud": "beta",
 		"@payloadcms/plugin-seo": "beta",
 		"@payloadcms/richtext-lexical": "beta",
 		"@payloadcms/storage-uploadthing": "beta",
@@ -27,45 +26,31 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
-		"framer-motion": "^11.5.5",
+		"framer-motion": "^11.11.10",
 		"graphql": "^16.9.0",
 		"jsonwebtoken": "^9.0.2",
-		"lucide-react": "^0.441.0",
-		"next": "15.0.0-canary.104",
+		"lucide-react": "^0.454.0",
+		"next": "15.0.2",
 		"next-themes": "^0.3.0",
 		"payload": "beta",
-		"react": "19.0.0-rc-06d0b89e-20240801",
-		"react-dom": "19.0.0-rc-06d0b89e-20240801",
-		"resend": "^3.5.0",
-		"sharp": "0.32.6",
-		"tailwind-merge": "^2.5.2",
+		"react": "19.0.0-rc-02c0e824-20241028",
+		"react-dom": "19.0.0-rc-02c0e824-20241028",
+		"resend": "4.0.1-alpha.0",
+		"sharp": "0.33.5",
+		"tailwind-merge": "^2.5.4",
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/jsonwebtoken": "^9.0.7",
-		"@types/node": "^22.5.5",
-		"@types/react": "npm:types-react@19.0.0-rc.0",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
+		"@types/node": "^22.8.5",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
 		"eslint": "^8.57.1",
-		"eslint-config-next": "15.0.0-canary.104",
+		"eslint-config-next": "15.0.2",
 		"prettier": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.6",
-		"tailwindcss": "^3.4.12",
-		"typescript": "5.6.2"
-	},
-	"engines": {
-		"node": "^18.20.2 || >=20.9.0"
-	},
-	"pnpm": {
-		"overrides": {
-			"@types/react": "npm:types-react@19.0.0-rc.0",
-			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
-		}
-	},
-	"overrides": {
-		"@types/react": "npm:types-react@19.0.0-rc.0",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
-	},
-	"packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+		"prettier-plugin-tailwindcss": "^0.6.8",
+		"tailwindcss": "^3.4.14",
+		"typescript": "5.6.3"
+	}
 }
