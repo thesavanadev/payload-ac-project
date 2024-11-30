@@ -30,7 +30,7 @@ const databaseURI =
 		: process.env.DATABASE_URI_PRD!;
 const payloadSecret = process.env.PAYLOAD_SECRET!;
 const resendAPIKey = process.env.RESEND_API_KEY!;
-const uploadthingSecret = process.env.UPLOADTHING_SECRET!;
+const uploadthingToken = process.env.UPLOADTHING_TOKEN!;
 const publicURL =
 	process.env.NODE_ENV === "development"
 		? process.env.NEXT_PUBLIC_SERVER_URL_DEV!
@@ -118,7 +118,7 @@ export default buildConfig({
 				[Media.slug]: true,
 			},
 			options: {
-				apiKey: uploadthingSecret,
+				token: uploadthingToken,
 				acl: "public-read",
 			},
 		}),

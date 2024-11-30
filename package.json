@@ -1,56 +1,76 @@
 {
 	"name": "payload-access-control",
-	"version": "1.4.3",
-	"description": "An exploration of the powerful access control measures built into Payload.",
+	"version": "3.2.2",
+	"description": "An exploration of the powerful access control features built into Payload.",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"build": "cross-env NODE_OPTIONS=--no-deprecation next build",
-		"dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
-		"devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+		"dev": "cross-env NODE_OPTIONS=--no-deprecation next dev --turbopack",
+		"dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
 		"generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
 		"generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+		"ii": "cross-env NODE_OPTIONS=--no-deprecation pnpm --ignore-workspace install",
 		"lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+		"lint:fix": "cross-env NODE_OPTIONS=--no-deprecation next lint --fix",
 		"payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+		"reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
 		"start": "cross-env NODE_OPTIONS=--no-deprecation next start"
 	},
 	"dependencies": {
-		"@payloadcms/db-mongodb": "beta",
-		"@payloadcms/email-resend": "beta",
-		"@payloadcms/live-preview-react": "beta",
-		"@payloadcms/next": "beta",
-		"@payloadcms/plugin-seo": "beta",
-		"@payloadcms/richtext-lexical": "beta",
-		"@payloadcms/storage-uploadthing": "beta",
+		"@payloadcms/db-mongodb": "^3.2.2",
+		"@payloadcms/email-resend": "^3.2.2",
+		"@payloadcms/live-preview-react": "^3.2.2",
+		"@payloadcms/next": "^3.2.2",
+		"@payloadcms/plugin-form-builder": "^3.2.2",
+		"@payloadcms/plugin-seo": "^3.2.2",
+		"@payloadcms/richtext-lexical": "^3.2.2",
+		"@payloadcms/storage-uploadthing": "^3.2.2",
+		"@payloadcms/ui": "^3.2.2",
 		"@radix-ui/react-slot": "^1.1.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
-		"framer-motion": "^11.11.10",
+		"framer-motion": "^11.12.0",
 		"graphql": "^16.9.0",
 		"jsonwebtoken": "^9.0.2",
-		"lucide-react": "^0.454.0",
-		"next": "15.0.2",
-		"next-themes": "^0.3.0",
-		"payload": "beta",
+		"lucide-react": "^0.462.0",
+		"next": "15.0.3",
+		"next-themes": "^0.4.3",
+		"payload": "^3.2.2",
 		"react": "19.0.0-rc-02c0e824-20241028",
 		"react-dom": "19.0.0-rc-02c0e824-20241028",
-		"resend": "4.0.1-alpha.0",
+		"resend": "^4.0.1",
 		"sharp": "0.33.5",
-		"tailwind-merge": "^2.5.4",
+		"tailwind-merge": "^2.5.5",
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/jsonwebtoken": "^9.0.7",
-		"@types/node": "^22.8.5",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
+		"@types/node": "^22.10.1",
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+		"autoprefixer": "^10.4.20",
 		"eslint": "^8.57.1",
-		"eslint-config-next": "15.0.2",
-		"prettier": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.8",
-		"tailwindcss": "^3.4.14",
-		"typescript": "5.6.3"
-	}
+		"eslint-config-next": "15.0.3",
+		"prettier": "^3.4.1",
+		"prettier-plugin-tailwindcss": "^0.6.9",
+		"tailwindcss": "^3.4.15",
+		"typescript": "5.7.2"
+	},
+	"engines": {
+		"node": "^18.20.2 || >=20.9.0"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "npm:types-react@19.0.0-rc.1",
+			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+		}
+	},
+	"overrides": {
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+	},
+	"packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }
