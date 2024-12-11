@@ -18,28 +18,28 @@
 		"start": "cross-env NODE_OPTIONS=--no-deprecation next start"
 	},
 	"dependencies": {
-		"@payloadcms/db-mongodb": "^3.2.2",
-		"@payloadcms/email-resend": "^3.2.2",
-		"@payloadcms/live-preview-react": "^3.2.2",
-		"@payloadcms/next": "^3.2.2",
-		"@payloadcms/plugin-form-builder": "^3.2.2",
-		"@payloadcms/plugin-seo": "^3.2.2",
-		"@payloadcms/richtext-lexical": "^3.2.2",
-		"@payloadcms/storage-uploadthing": "^3.2.2",
-		"@payloadcms/ui": "^3.2.2",
+		"@payloadcms/db-mongodb": "latest",
+		"@payloadcms/email-resend": "latest",
+		"@payloadcms/live-preview-react": "latest",
+		"@payloadcms/next": "latest",
+		"@payloadcms/plugin-form-builder": "latest",
+		"@payloadcms/plugin-seo": "latest",
+		"@payloadcms/richtext-lexical": "latest",
+		"@payloadcms/storage-uploadthing": "latest",
+		"@payloadcms/ui": "latest",
 		"@radix-ui/react-slot": "^1.1.0",
-		"class-variance-authority": "^0.7.0",
+		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
-		"framer-motion": "^11.12.0",
+		"framer-motion": "^11.13.5",
 		"graphql": "^16.9.0",
 		"jsonwebtoken": "^9.0.2",
-		"lucide-react": "^0.462.0",
-		"next": "15.0.3",
-		"next-themes": "^0.4.3",
-		"payload": "^3.2.2",
-		"react": "19.0.0-rc-02c0e824-20241028",
-		"react-dom": "19.0.0-rc-02c0e824-20241028",
+		"lucide-react": "^0.468.0",
+		"next": "15.1.0",
+		"next-themes": "^0.4.4",
+		"payload": "latest",
+		"react": "19.0.0",
+		"react-dom": "19.0.0",
 		"resend": "^4.0.1",
 		"sharp": "0.33.5",
 		"tailwind-merge": "^2.5.5",
@@ -48,29 +48,18 @@
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/jsonwebtoken": "^9.0.7",
-		"@types/node": "^22.10.1",
-		"@types/react": "npm:types-react@19.0.0-rc.1",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+		"@types/node": "^22.10.2",
+		"@types/react": "19.0.0",
+		"@types/react-dom": "19.0.0",
 		"autoprefixer": "^10.4.20",
 		"eslint": "^8.57.1",
-		"eslint-config-next": "15.0.3",
-		"prettier": "^3.4.1",
+		"eslint-config-next": "15.1.0",
+		"prettier": "^3.4.2",
 		"prettier-plugin-tailwindcss": "^0.6.9",
-		"tailwindcss": "^3.4.15",
+		"tailwindcss": "^3.4.16",
 		"typescript": "5.7.2"
 	},
 	"engines": {
 		"node": "^18.20.2 || >=20.9.0"
-	},
-	"pnpm": {
-		"overrides": {
-			"@types/react": "npm:types-react@19.0.0-rc.1",
-			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-		}
-	},
-	"overrides": {
-		"@types/react": "npm:types-react@19.0.0-rc.1",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-	},
-	"packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
+	}
 }
