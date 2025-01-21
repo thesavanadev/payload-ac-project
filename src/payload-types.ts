@@ -154,7 +154,13 @@ export interface User {
   id: string;
   firstName: string;
   lastName: string;
+  /**
+   * This field sets which roles that this user has access to.
+   */
   roles?: ('admin' | 'editor')[] | null;
+  /**
+   * This field sets which sites that this user has access to.
+   */
   sites?: (string | Site)[] | null;
   updatedAt: string;
   createdAt: string;
