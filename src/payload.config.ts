@@ -18,10 +18,6 @@ import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-const databaseURI = process.env.NODE_ENV === "development" ? process.env.DATABASE_URI_DEV! : process.env.DATABASE_URI_PRD!;
-const payloadSecret = process.env.PAYLOAD_SECRET!;
-const resendAPIKey = process.env.RESEND_API_KEY!;
-const uploadthingToken = process.env.UPLOADTHING_TOKEN!;
 
 export default buildConfig({
 	admin: {
@@ -34,7 +30,7 @@ export default buildConfig({
 		user: Users.slug,
 	},
 	collections: [Sites, Pages, Media, ContactRequest, Users],
-	db: mongooseAdapter({ url: databaseURI }),
+	db: mongooseAdapter({ url: process.env.DATABASE_URI! }),
 	editor: lexicalEditor({
 		features: () => {
 			return [
@@ -66,9 +62,9 @@ export default buildConfig({
 		},
 	}),
 	email: resendAdapter({
-		defaultFromAddress: "mta@s3.co.ke",
-		defaultFromName: "MTA @ S3",
-		apiKey: resendAPIKey,
+		defaultFromAddress: "hello@s3.co.ke",
+		defaultFromName: "Mailer @ S3",
+		apiKey: process.env.RESEND_API_KEY!,
 	}),
 	globals: [],
 	plugins: [
@@ -78,12 +74,12 @@ export default buildConfig({
 				[Media.slug]: true,
 			},
 			options: {
-				token: uploadthingToken,
+				token: process.env.UPLOADTHING_TOKEN!,
 				acl: "public-read",
 			},
 		}),
 	],
-	secret: payloadSecret,
+	secret: process.env.PAYLOAD_SECRET!,
 	sharp,
 	typescript: {
 		outputFile: path.resolve(dirname, "payload-types.ts"),
