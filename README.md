@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c5976214-68f7-43a1-86a7-c25a7d60162a/deploy-status)](https://app.netlify.com/sites/payload-ac-project/deploys)
-
 # The Payload Access Control Project
 
 This repository contains an example that showcases how powerful Payload's access control is, and how it can be used to create simple, yet
@@ -39,7 +37,7 @@ In this application, I will attempt to discover how to:
 ## Tech Stack
 
 - **Frontend:** Next.js version 15, TypeScript, Tailwind CSS and Shadcn UI.
-- **Backend:** Payload CMS, MongoDB and UploadThing Digital Asset Management.
+- **Backend:** Payload CMS, Turso and UploadThing Digital Asset Management.
 - **Deployment:** Vercel
 
 ## Getting Started
