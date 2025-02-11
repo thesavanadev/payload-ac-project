@@ -1,4 +1,4 @@
-import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { resendAdapter } from "@payloadcms/email-resend";
 import { BoldFeature, ItalicFeature, LinkFeature, lexicalEditor, UnderlineFeature } from "@payloadcms/richtext-lexical";
 import { seoPlugin } from "@payloadcms/plugin-seo";
@@ -30,7 +30,12 @@ export default buildConfig({
 		user: Users.slug,
 	},
 	collections: [Sites, Pages, Media, ContactRequest, Users],
-	db: mongooseAdapter({ url: process.env.DATABASE_URI! }),
+	db: sqliteAdapter({
+		client: {
+			url: process.env.DATABASE_URI!,
+			authToken: process.env.DATABASE_AUTH_TOKEN!,
+		},
+	}),
 	editor: lexicalEditor({
 		features: () => {
 			return [
